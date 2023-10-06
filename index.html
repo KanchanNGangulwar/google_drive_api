@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload and Download Files from Google Drive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        form {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+    
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder {
+            width: 80%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    
+</head>
+<body>
+    <form action="/downloadAndUpload" method="POST" enctype="multipart/form-data">
+        <h2>Upload and Download Video from Google Drive</h2>
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email_address" placeholder="Email Address">
+        <!-- <input type="file" name="file_to_upload" accept=".mp4, .avi, .mkv"> -->
+        <input type="text" name="downloadFileId" placeholder="Google Drive File ID to Download" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const formElem = document.querySelector('form');
+        const fileInput = document.querySelector('input[type="file"]');
+        const selectedFileName = document.querySelector('.selected-file-name');
+    </script>
+</body>
+</html>
